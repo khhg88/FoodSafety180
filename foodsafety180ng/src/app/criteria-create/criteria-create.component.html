@@ -1,0 +1,15 @@
+<p>criteria-create works!</p>
+<form [formGroup]="criteriaForm" (ngSubmit)="save()">
+  <input type="text" formControlName="name">
+  <error-messages [_formControlName]="name"></error-messages>
+
+  <input type="text" formControlName="lastName">
+  <error-messages [_formControlName]="lastName"></error-messages>
+
+  <button type="submit" [disabled]="criteriaForm.invalid">Submit</button>
+</form>
+
+<!-- <div *ngIf="name.hasError && (name.touched || name.dirty)">
+  <p *ngIf="name.hasError('required')">Name is required</p>
+  <p *ngIf="name.hasError('minlength')">Name must be > 4 characters</p>
+</div> -->
